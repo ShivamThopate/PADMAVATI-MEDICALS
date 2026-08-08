@@ -1,0 +1,84 @@
+/* ── Profile Page ── */
+.profile-page {
+  padding: 40px 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-page__title {
+  font-family: var(--fh);
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: var(--t1);
+  text-align: center;
+}
+
+.profile-card {
+  background: #fff;
+  border: 1px solid var(--b1);
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-form label {
+  font-weight: 600;
+  color: var(--t1);
+  font-size: 14px;
+}
+
+.profile-form input,
+.profile-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--b1);
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.profile-form input[readonly] {
+  background: var(--bg2);
+  color: var(--t2);
+  cursor: not-allowed;
+}
+
+.profile-form__row {
+  display: flex;
+  gap: 16px;
+}
+
+.profile-form__row > * {
+  flex: 1;
+}
+
+.profile-form__actions {
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .profile-form__row {
+    flex-direction: column;
+  }
+}

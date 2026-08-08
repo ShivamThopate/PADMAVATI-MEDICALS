@@ -1,0 +1,127 @@
+/* ── Auth Modal Styles ── */
+
+.auth-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.auth-backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.auth-modal {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: var(--rad);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(20px);
+  transition: transform 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.auth-backdrop.open .auth-modal {
+  transform: translateY(0);
+}
+
+.auth-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--t2);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.auth-modal__close:hover {
+  color: var(--t1);
+}
+
+.auth-modal__header {
+  padding: 32px 32px 16px;
+  text-align: center;
+}
+
+.auth-modal__header h2 {
+  font-family: var(--fh);
+  font-size: 24px;
+  color: var(--t1);
+  margin-bottom: 8px;
+}
+
+.auth-modal__header p {
+  color: var(--t2);
+  font-size: 14px;
+}
+
+.auth-modal__body {
+  padding: 0 32px 32px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form input {
+  padding: 12px 16px;
+  border: 1px solid var(--b1);
+  border-radius: 4px;
+  font-family: var(--fb);
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(35,47,62,0.1);
+}
+
+.auth-form button[type="submit"] {
+  margin-top: 8px;
+}
+
+.auth-modal__footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--t2);
+}
+
+.auth-modal__footer a {
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-modal__footer a:hover {
+  text-decoration: underline;
+}
+
+#auth-error {
+  color: var(--err);
+  font-size: 13px;
+  text-align: center;
+  margin-top: -8px;
+  margin-bottom: 8px;
+  display: none;
+}

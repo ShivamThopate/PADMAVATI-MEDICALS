@@ -1,0 +1,139 @@
+/* ── Home Page ── */
+
+/* Hero Carousel */
+.hero{position:relative;overflow:hidden;margin-bottom:var(--s5)}
+.hero__track{display:flex;transition:transform .6s var(--ease)}
+.hero__slide{
+  min-width:100%;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  padding:var(--s7) var(--s5);min-height:320px;
+  background-size:cover;background-position:center;
+}
+.hero__content{
+  max-width:600px;text-align:center;color:#fff;z-index:2;
+}
+.hero__content h1{
+  font-family:var(--fh);font-size:clamp(28px,5vw,48px);font-weight:800;
+  margin-bottom:var(--s3);line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.hero__content p{
+  font-size:clamp(14px,2vw,18px);margin-bottom:var(--s5);opacity:.9;
+  text-shadow:0 1px 6px rgba(0,0,0,.3);
+}
+.hero__dots{
+  position:absolute;bottom:var(--s4);left:50%;transform:translateX(-50%);
+  display:flex;gap:var(--s2);z-index:3;
+}
+.hero__dot{
+  width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);
+  border:none;cursor:pointer;transition:all var(--t-fast);
+}
+.hero__dot--active{background:#fff;transform:scale(1.2)}
+
+.hero__arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:44px;height:80px;background:rgba(0,0,0,.15);border:none;
+  color:#fff;font-size:24px;cursor:pointer;z-index:3;
+  display:flex;align-items:center;justify-content:center;
+  transition:background var(--t-fast);
+}
+.hero__arrow:hover{background:rgba(0,0,0,.4)}
+.hero__arrow--prev{left:0;border-radius:0 var(--r2) var(--r2) 0}
+.hero__arrow--next{right:0;border-radius:var(--r2) 0 0 var(--r2)}
+.hero__arrow svg{width:28px;height:28px;fill:#fff}
+
+/* Categories Grid */
+.home-section{padding:var(--s5) 0}
+.home-section__title{
+  font-family:var(--fh);font-size:22px;font-weight:700;
+  margin-bottom:var(--s4);padding-bottom:var(--s2);
+  border-bottom:2px solid var(--bdr);
+}
+
+.cat-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--s4);
+}
+.cat-card{
+  background:var(--white);border-radius:var(--r2);padding:var(--s5) var(--s4);
+  text-align:center;cursor:pointer;border:1px solid var(--bdr-lt);
+  transition:all var(--t-base);text-decoration:none;display:block;
+}
+.cat-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px);text-decoration:none}
+.cat-card__icon{font-size:48px;margin-bottom:var(--s2);display:block}
+.cat-card__name{font-weight:600;font-size:14px;color:var(--t1)}
+
+/* Deal of the Day */
+.deal-banner{
+  background:linear-gradient(135deg,#1e3a5f,#0f172a);
+  border-radius:var(--r3);padding:var(--s5);margin-bottom:var(--s5);
+  color:#fff;display:flex;align-items:center;gap:var(--s5);
+  overflow:hidden;position:relative;
+}
+.deal-banner::before{
+  content:'';position:absolute;top:-50%;right:-10%;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(254,189,105,.15),transparent 70%);
+}
+.deal-banner__info{flex:1;z-index:1}
+.deal-banner__tag{
+  display:inline-block;background:var(--danger);padding:4px 12px;
+  border-radius:var(--r-full);font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:var(--s2);
+}
+.deal-banner__title{
+  font-family:var(--fh);font-size:clamp(20px,3vw,28px);font-weight:700;
+  margin-bottom:var(--s2);
+}
+.deal-banner__timer{
+  display:flex;gap:var(--s2);margin-top:var(--s3);
+}
+.deal-banner__time{
+  background:rgba(255,255,255,.1);padding:var(--s2) var(--s3);
+  border-radius:var(--r2);text-align:center;min-width:56px;
+  backdrop-filter:blur(4px);
+}
+.deal-banner__time span{display:block;font-size:22px;font-weight:700;font-family:var(--fh)}
+.deal-banner__time small{font-size:10px;text-transform:uppercase;opacity:.7}
+
+.deal-banner__products{
+  display:flex;gap:var(--s3);z-index:1;overflow-x:auto;flex-shrink:0;
+}
+
+/* Horizontal scroll section */
+.hscroll{
+  display:flex;gap:var(--s4);overflow-x:auto;padding-bottom:var(--s2);
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+}
+.hscroll::-webkit-scrollbar{height:6px}
+.hscroll::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
+.hscroll>.product-card{min-width:220px;max-width:220px;scroll-snap-align:start;flex-shrink:0}
+
+/* Product grid on home (featured / trending) */
+.home-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--s4);
+}
+
+/* Health concerns */
+.concern-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--s4);
+}
+.concern-card{
+  background:var(--white);border-radius:var(--r2);padding:var(--s4);
+  display:flex;align-items:center;gap:var(--s3);cursor:pointer;
+  border:1px solid var(--bdr-lt);transition:all var(--t-base);text-decoration:none;
+}
+.concern-card:hover{box-shadow:var(--sh-md);transform:translateY(-2px);text-decoration:none}
+.concern-card__icon{font-size:32px;flex-shrink:0}
+.concern-card__name{font-weight:600;font-size:14px;color:var(--t1)}
+
+/* Recently viewed */
+.recent-section{background:var(--white);padding:var(--s5);border-radius:var(--r2);margin-top:var(--s5);border:1px solid var(--bdr-lt)}
+
+/* Responsive */
+@media(max-width:768px){
+  .deal-banner{flex-direction:column}
+  .deal-banner__products{width:100%}
+  .hero__slide{min-height:220px;padding:var(--s5) var(--s4)}
+  .hero__arrow{display:none}
+}
