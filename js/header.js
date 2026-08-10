@@ -10,10 +10,15 @@ const Header = {
     form?.addEventListener('submit', e => {
       e.preventDefault();
       const q = document.getElementById('hdr-search-input').value.trim();
-      if (q) {
+      const cat = document.getElementById('hdr-search-cat').value;
+      if (q || cat) {
         Store.query = q;
-        Store.filters = { category: '', minPrice: 0, maxPrice: 50000, rating: 0, inStock: false };
-        Router.go('#/search/' + encodeURIComponent(q));
+        Store.filters = { category: cat, minPrice: 0, maxPrice: 50000, rating: 0, inStock: false };
+        if (q) {
+          Router.go('#/search/' + encodeURIComponent(q));
+        } else {
+          Router.go('#/products' + (cat ? '/' + cat : ''));
+        }
       }
     });
 

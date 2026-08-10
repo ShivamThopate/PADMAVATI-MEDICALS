@@ -192,7 +192,7 @@ const Cart = {
     try {
       await createOrder(cartItems, subtotal);
       Store.cart = [];
-      EventBus?.emit('cart:changed');
+      Store._persist('cart');
       Cart.close();
       Toast.show('Order placed successfully!');
       Router.go('#/orders');
